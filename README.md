@@ -131,7 +131,7 @@ The VPC range for this setup is 172.20.0.0/20.
   - Enter the following details:  
     - Name: MyNATGateway  
     - Subnet: Select one of the web subnets (e.g., WebSubnet-AZ1a)  
-    - Elastic IP allocation ID: Select the allocated Elastic IP  
+    - Elastic IP allocation ID: Allocate Elastic IP  
   - Click "Create NAT gateway".  
 
 - Create Route Table for Private Subnets  
