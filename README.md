@@ -198,11 +198,11 @@ The VPC range for this setup is 172.20.0.0/20.
   - Security group: Create a new security group allowing access from the app tier instances
     - Configure Inbound Rules for App Tier Security Group
       - Click on "Add Rule" under the Inbound rules section.
-      - Allow HTTP Traffic from Web Tier Instances:
-        - Type: HTTP
+      - Allow MySQL/Aurora Traffic from App Tier to DB Tier (if DB is using MySQL):
+        - Type: Custom TCP
         - Protocol: TCP
-        - Port range: 80
-        - Source: Custom (select the security group of the web tier instances, e.g., WebTierSG)
+        - Port range: 3306
+        - Source: Custom (select the security group of the app tier instances, e.g., AppTierSG)
 - Click "Create database".
 
 **7. Setup Load Balancers** 
