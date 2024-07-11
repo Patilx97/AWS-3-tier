@@ -124,12 +124,6 @@ The VPC range for this setup is 172.20.0.0/20.
 
 **4. NAT Gateway for Private Subnets**   
 
-- Create Elastic IP  
-  
-  - Navigate to "Elastic IPs" in the EC2 Dashboard.  
-  - Click on "Allocate Elastic IP address".  
-  - Click "Allocate".  
-
 - Create NAT Gateway  
 
   - Navigate to "NAT Gateways" in the VPC Dashboard.  
