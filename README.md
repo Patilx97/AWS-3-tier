@@ -83,7 +83,7 @@ The VPC range for this setup is 172.20.0.0/20.
     - IPv4 CIDR blocks: 172.20.7.0/24, 172.20.8.0/24, 172.20.9.0/24  
     - Availability Zones: us-east-1a, us-east-1b, us-east-1c
 
- ** 3. Internet Gateway and Route Tables **   
+ **3. Internet Gateway and Route Tables**   
 
 - Create Internet Gateway and Attach to VPC  
 
@@ -119,7 +119,7 @@ The VPC range for this setup is 172.20.0.0/20.
   - Select each web subnet (WebSubnet-AZ1a, WebSubnet-AZ1b, WebSubnet-AZ1c), click on "Actions", and choose "Modify auto-assign IP settings".  
   - Check "Enable auto-assign public IPv4 address" and click "Save".  
 
- ** 4. NAT Gateway for Private Subnets **   
+ **4. NAT Gateway for Private Subnets**   
 
 - Create Elastic IP  
   
@@ -156,7 +156,7 @@ The VPC range for this setup is 172.20.0.0/20.
 - Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
 - Click "Save".     
      
- ** 5. Deploy EC2 Instances for Web and App Tiers **   
+ **5. Deploy EC2 Instances for Web and App Tiers**   
   
 - Web Tier Instances  
 
@@ -182,7 +182,7 @@ The VPC range for this setup is 172.20.0.0/20.
     - Auto-assign public IP: Disabled
     - Security group: Create a new security group allowing access from the web tier instances on the necessary ports (e.g., HTTP port 80, SSH port 22)
 
- ** 6. Setup RDS Instance ** 
+ **6. Setup RDS Instance** 
 
 - Navigate to "Databases" in the RDS Dashboard.
 - Click on "Create database".
@@ -201,7 +201,7 @@ The VPC range for this setup is 172.20.0.0/20.
   - Security group: Create a new security group allowing access from the app tier instances
 - Click "Create database".
 
- ** 7. Setup Load Balancers ** 
+ **7. Setup Load Balancers** 
 
 - Web Load Balancer
 
@@ -227,7 +227,7 @@ The VPC range for this setup is 172.20.0.0/20.
     - Target group: Create a new target group for the app tier instances
     - Register the app tier instances
   
- ** 8. Configure Security Groups and IAM Roles ** 
+ **8. Configure Security Groups and IAM Roles** 
 
 - Ensure security groups allow necessary traffic between tiers.
 - Create IAM roles for EC2 instances to allow access to S3, CloudWatch, etc.
