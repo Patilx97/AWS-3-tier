@@ -1,5 +1,6 @@
-Project Write-Up: Setting Up a 3-Tier Architecture with MySQL-PHP Based App on AWS
-Overview
+# Project Write-Up: Setting Up a 3-Tier Architecture with MySQL-PHP Based App on AWS  
+
+## Overview  
 This project demonstrates the setup of a 3-tier architecture for a MySQL-PHP based application on AWS. The architecture consists of three availability zones (AZs): 1a, 1b, and 1c. Each AZ contains three subnets: one for the web tier (public), one for the app tier (private), and one for the database (DB) tier with RDS (private). A load balancer distributes traffic between the web instances and app instances.
 
 The VPC range for this setup is 172.20.0.0/20.
@@ -43,8 +44,9 @@ Architecture Diagram
       | DB  | | DB  | | DB  |
       +-----+ +-----+ +-----+
 ```
-Step-by-Step Setup Using AWS Management Console
-VPC Creation
+## Step-by-Step Setup Using AWS Management Console  
+
+1.VPC Creation
 
 Navigate to the VPC Dashboard in the AWS Management Console.
 Click on "Create VPC".
@@ -52,7 +54,8 @@ Enter the following details:
 Name tag: MyVPC
 IPv4 CIDR block: 172.20.0.0/20
 Click "Create VPC".
-Subnets Creation
+
+2. Subnets Creation
 
 Web Tier Subnets (Public)
 
