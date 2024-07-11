@@ -5,8 +5,7 @@ This project demonstrates the setup of a 3-tier architecture for a MySQL-PHP bas
 The VPC range for this setup is 172.20.0.0/20.
 
 Architecture Diagram
-lua
-Copy code
+```plaintext
              Internet
                  |
           +---------------+
@@ -43,6 +42,7 @@ Copy code
       +-----+ +-----+ +-----+
       | DB  | | DB  | | DB  |
       +-----+ +-----+ +-----+
+```
 Step-by-Step Setup Using AWS Management Console
 VPC Creation
 
