@@ -155,9 +155,9 @@ The VPC range for this setup is 172.20.0.0/20.
 
 - Associate Route Table with Private Subnets  
   
-- Select the PrivateRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
-- Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
-- Click "Save".     
+  - Select the PrivateRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
+  - Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
+  - Click "Save".     
      
  **5. Deploy EC2 Instances for Web and App Tiers**   
   
