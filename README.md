@@ -154,8 +154,8 @@ The VPC range for this setup is 172.20.0.0/20.
   
 - Select the PrivateRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
 - Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
-- Click "Save".  
-
+- Click "Save".     
+     
 5. Deploy EC2 Instances for Web and App Tiers  
   
 - Web Tier Instances  
@@ -186,59 +186,65 @@ The VPC range for this setup is 172.20.0.0/20.
 
 - Navigate to "Databases" in the RDS Dashboard.
 - Click on "Create database".
-Select "Standard Create".
-Choose "MySQL" as the engine type.
-Select the "Free tier" template.
-Enter the following details:
-DB instance identifier: MyDBInstance
-Master username: admin
-Master password: yourpassword
-Click "Next".
-In the "Connectivity" section, select the following:
-VPC: MyVPC
-Subnet group: Create a new subnet group including the DB subnets (DBSubnet-AZ1a, DBSubnet-AZ1b, DBSubnet-AZ1c)
-Public access: No
-Security group: Create a new security group allowing access from the app tier instances
-Click "Create database".
-Setup Load Balancers
+- Select "Standard Create".
+- Choose "MySQL" as the engine type.
+- Select the "Free tier" template.
+- Enter the following details:
+  - DB instance identifier: MyDBInstance
+  - Master username: admin
+  - Master password: yourpassword
+- Click "Next".
+- In the "Connectivity" section, select the following:
+  - VPC: MyVPC
+  - Subnet group: Create a new subnet group including the DB subnets (DBSubnet-AZ1a, DBSubnet-AZ1b, DBSubnet-AZ1c)
+  - Public access: No
+  - Security group: Create a new security group allowing access from the app tier instances
+- Click "Create database".
 
-Web Load Balancer
+7. Setup Load Balancers
 
-Navigate to "Load Balancers" in the EC2 Dashboard.
-Click on "Create Load Balancer" and select "Application Load Balancer".
-Enter the following details:
-Name: WebALB
-Scheme: Internet-facing
-IP address type: IPv4
-Click "Next: Configure Security Settings".
-In "Configure Security Groups", select the security group allowing HTTP access.
-Click "Next: Configure Routing".
-Create a new target group for the web tier instances.
-Click "Next: Register Targets".
-Register the web tier instances.
-Click "Create".
-App Load Balancer
+- Web Load Balancer
 
-Repeat the above steps with:
-Name: AppALB
-Scheme: Internal
-Target group: Create a new target group for the app tier instances
-Register the app tier instances
-Configure Security Groups and IAM Roles
+  - Navigate to "Load Balancers" in the EC2 Dashboard.
+  - Click on "Create Load Balancer" and select "Application Load Balancer".
+  - Enter the following details:
+    - Name: WebALB
+    - Scheme: Internet-facing
+    - IP address type: IPv4
+- Click "Next: Configure Security Settings".
+- In "Configure Security Groups", select the security group allowing HTTP access.
+- Click "Next: Configure Routing".
+- Create a new target group for the web tier instances.
+- Click "Next: Register Targets".
+- Register the web tier instances.
+- Click "Create".
+  
+- App Load Balancer
 
-Ensure security groups allow necessary traffic between tiers.
-Create IAM roles for EC2 instances to allow access to S3, CloudWatch, etc.
-Deploy the MySQL-PHP Application
+  - Repeat the above steps with:
+    - Name: AppALB
+    - Scheme: Internal
+    - Target group: Create a new target group for the app tier instances
+    - Register the app tier instances
+  
+8. Configure Security Groups and IAM Roles
 
-SSH into the web tier instances.
-Install Apache, PHP, and other necessary packages.
-Deploy the PHP application code from your Git repository.
-Configure the application to connect to the RDS database.
-Testing and Verification
+- Ensure security groups allow necessary traffic between tiers.
+- Create IAM roles for EC2 instances to allow access to S3, CloudWatch, etc.
 
-Access the application through the web load balancer's DNS name.
-Verify the application functionality.
-Ensure proper communication between web, app, and DB tiers.
+9. Deploy the MySQL-PHP Application
+
+- SSH into the web tier instances.
+- Install Apache, PHP, and other necessary packages.
+- Deploy the PHP application code from your Git repository.
+- Configure the application to connect to the RDS database.
+
+10. Testing and Verification
+
+- Access the application through the web load balancer's DNS name.
+- Verify the application functionality.
+- Ensure proper communication between web, app, and DB tiers.
+  
 By following these steps, you can set up a robust 3-tier architecture for a MySQL-PHP based application on AWS, leveraging the AWS Management Console for configuration and deployment.
 
 
