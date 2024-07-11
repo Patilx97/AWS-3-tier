@@ -55,6 +55,7 @@ The VPC range for this setup is 172.20.0.0/20.
   - IPv4 CIDR block: 172.20.0.0/20  
 - Click "Create VPC".  
 
+
 2. Subnets Creation  
 
 - Web Tier Subnets (Public)
