@@ -83,7 +83,7 @@ The VPC range for this setup is 172.20.0.0/20.
     - IPv4 CIDR blocks: 172.20.7.0/24, 172.20.8.0/24, 172.20.9.0/24  
     - Availability Zones: us-east-1a, us-east-1b, us-east-1c
 
-Internet Gateway and Route Tables  
+3. Internet Gateway and Route Tables  
 
 - Create Internet Gateway and Attach to VPC  
 
