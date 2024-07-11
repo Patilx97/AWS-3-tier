@@ -175,16 +175,17 @@ The VPC range for this setup is 172.20.0.0/20.
 - Click "Launch instance".
 
 - App Tier Instances  
-////////////////////////////////////
-Repeat the above steps with:
-Name: AppInstance-AZ1a, AppInstance-AZ1b, AppInstance-AZ1c
-Subnet: Select the respective app subnet (AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c)
-Auto-assign public IP: Disabled
-Security group: Create a new security group allowing access from the web tier instances on the necessary ports (e.g., HTTP port 80, SSH port 22)
-Setup RDS Instance
 
-Navigate to "Databases" in the RDS Dashboard.
-Click on "Create database".
+ - Repeat the above steps with:
+    - Name: AppInstance-AZ1a, AppInstance-AZ1b, AppInstance-AZ1c
+    - Subnet: Select the respective app subnet (AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c)
+    - Auto-assign public IP: Disabled
+    - Security group: Create a new security group allowing access from the web tier instances on the necessary ports (e.g., HTTP port 80, SSH port 22)
+
+6. Setup RDS Instance
+
+- Navigate to "Databases" in the RDS Dashboard.
+- Click on "Create database".
 Select "Standard Create".
 Choose "MySQL" as the engine type.
 Select the "Free tier" template.
