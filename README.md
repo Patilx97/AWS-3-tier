@@ -142,16 +142,16 @@ The VPC range for this setup is 172.20.0.0/20.
 
 - Create Route Table for Private Subnets  
   
-- Navigate to "Route Tables" in the VPC Dashboard.  
-- Click on "Create route table".  
-- Enter a name tag, e.g., PrivateRouteTable.  
-- VPC: MyVPC  
-- Click "Create route table".  
-- Select the created route table, click on "Actions", and choose "Edit routes".  
-- Click "Add route" and enter the following details:  
-  - Destination: 0.0.0.0/0  
-  - Target: Select the NAT gateway (MyNATGateway)  
-- Click "Save routes".  
+  - Navigate to "Route Tables" in the VPC Dashboard.  
+  - Click on "Create route table".  
+  - Enter a name tag, e.g., PrivateRouteTable.  
+  - VPC: MyVPC  
+  - Click "Create route table".  
+  - Select the created route table, click on "Actions", and choose "Edit routes".  
+  - Click "Add route" and enter the following details:  
+    - Destination: 0.0.0.0/0  
+    - Target: Select the NAT gateway (MyNATGateway)  
+  - Click "Save routes".  
 
 - Associate Route Table with Private Subnets  
   
