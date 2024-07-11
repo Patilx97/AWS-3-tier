@@ -57,54 +57,54 @@ The VPC range for this setup is 172.20.0.0/20.
 
 2. Subnets Creation  
 
-Web Tier Subnets (Public)
+- Web Tier Subnets (Public)
 
-Navigate to "Subnets" in the VPC Dashboard.  
-Click on "Create subnet".  
-Enter the following details for each AZ:  
-Name tag: WebSubnet-AZ1a  
-VPC: MyVPC  
-Availability Zone: us-east-1a  
-IPv4 CIDR block: 172.20.1.0/24  
-Repeat the process for us-east-1b with 172.20.2.0/24 and us-east-1c with 172.20.3.0/24.  
+  - Navigate to "Subnets" in the VPC Dashboard.  
+  - Click on "Create subnet".  
+  - Enter the following details for each AZ:  
+    - Name tag: WebSubnet-AZ1a  
+    - VPC: MyVPC  
+    - Availability Zone: us-east-1a  
+    - IPv4 CIDR block: 172.20.1.0/24  
+  - Repeat the process for us-east-1b with 172.20.2.0/24 and us-east-1c with 172.20.3.0/24.  
 
-App Tier Subnets (Private)
+- App Tier Subnets (Private)
 
-Repeat the above steps with:  
-Name tags: AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c  
-IPv4 CIDR blocks: 172.20.4.0/24, 172.20.5.0/24, 172.20.6.0/24  
-Availability Zones: us-east-1a, us-east-1b, us-east-1c  
+  - Repeat the above steps with:  
+    - Name tags: AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c  
+    - IPv4 CIDR blocks: 172.20.4.0/24, 172.20.5.0/24, 172.20.6.0/24  
+    - Availability Zones: us-east-1a, us-east-1b, us-east-1c  
 
-DB Tier Subnets (Private)  
+- DB Tier Subnets (Private)  
 
-Repeat the above steps with:  
-Name tags: DBSubnet-AZ1a, DBSubnet-AZ1b, DBSubnet-AZ1c  
-IPv4 CIDR blocks: 172.20.7.0/24, 172.20.8.0/24, 172.20.9.0/24  
-Availability Zones: us-east-1a, us-east-1b, us-east-1c
+  - Repeat the above steps with:  
+    - Name tags: DBSubnet-AZ1a, DBSubnet-AZ1b, DBSubnet-AZ1c  
+    - IPv4 CIDR blocks: 172.20.7.0/24, 172.20.8.0/24, 172.20.9.0/24  
+    - Availability Zones: us-east-1a, us-east-1b, us-east-1c
 
 Internet Gateway and Route Tables  
 
-Create Internet Gateway and Attach to VPC  
+- Create Internet Gateway and Attach to VPC  
 
-Navigate to "Internet Gateways" in the VPC Dashboard.  
-Click on "Create internet gateway".  
-Enter a name tag, e.g., MyIGW.  
-Click "Create internet gateway".  
-Select the created internet gateway, click on "Actions", and choose "Attach to VPC".  
-Select MyVPC and click "Attach internet gateway".  
+  - Navigate to "Internet Gateways" in the VPC Dashboard.  
+    - Click on "Create internet gateway".  
+    - Enter a name tag, e.g., MyIGW.  
+    - Click "Create internet gateway".  
+    - Select the created internet gateway, click on "Actions", and choose "Attach to VPC".  
+    - Select MyVPC and click "Attach internet gateway".  
 
-Create Route Table for Public Subnets  
+- Create Route Table for Public Subnets  
   
-Navigate to "Route Tables" in the VPC Dashboard.  
-Click on "Create route table".  
-Enter a name tag, e.g., PublicRouteTable.  
-VPC: MyVPC  
-Click "Create route table".  
-Select the created route table, click on "Actions", and choose "Edit routes".  
-Click "Add route" and enter the following details:  
-Destination: 0.0.0.0/0  
-Target: Select the internet gateway (MyIGW)  
-Click "Save routes".  
+  - Navigate to "Route Tables" in the VPC Dashboard.  
+  - Click on "Create route table".  
+  - Enter a name tag, e.g., PublicRouteTable.  
+  - VPC: MyVPC  
+  - Click "Create route table".  
+  - Select the created route table, click on "Actions", and choose "Edit routes".  
+  - Click "Add route" and enter the following details:  
+    - Destination: 0.0.0.0/0  
+    - Target: Select the internet gateway (MyIGW)  
+  - Click "Save routes".  
 
 Associate Route Table with Public Subnets  
 
