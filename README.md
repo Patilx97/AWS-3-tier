@@ -196,6 +196,13 @@ The VPC range for this setup is 172.20.0.0/20.
   - Subnet group: Create a new subnet group including the DB subnets (DBSubnet-AZ1a, DBSubnet-AZ1b, DBSubnet-AZ1c)
   - Public access: No
   - Security group: Create a new security group allowing access from the app tier instances
+    - Configure Inbound Rules for App Tier Security Group
+      - Click on "Add Rule" under the Inbound rules section.
+      - Allow HTTP Traffic from Web Tier Instances:
+        - Type: HTTP
+        - Protocol: TCP
+        - Port range: 80
+        - Source: Custom (select the security group of the web tier instances, e.g., WebTierSG)
 - Click "Create database".
 
 **7. Setup Load Balancers** 
