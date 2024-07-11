@@ -107,74 +107,74 @@ The VPC range for this setup is 172.20.0.0/20.
     - Target: Select the internet gateway (MyIGW)  
   - Click "Save routes".  
 
-Associate Route Table with Public Subnets  
+- Associate Route Table with Public Subnets  
 
-Select the PublicRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
-Select the subnets WebSubnet-AZ1a, WebSubnet-AZ1b, and WebSubnet-AZ1c.  
-Click "Save".  
+  - Select the PublicRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
+  - Select the subnets WebSubnet-AZ1a, WebSubnet-AZ1b, and WebSubnet-AZ1c.  
+  - Click "Save".  
 
-Enable Public IP Assignment for Public Subnets  
+- Enable Public IP Assignment for Public Subnets  
  
-Navigate to "Subnets" in the VPC Dashboard.  
-Select each web subnet (WebSubnet-AZ1a, WebSubnet-AZ1b, WebSubnet-AZ1c), click on "Actions", and choose "Modify auto-assign IP settings".  
-Check "Enable auto-assign public IPv4 address" and click "Save".  
+  - Navigate to "Subnets" in the VPC Dashboard.  
+  - Select each web subnet (WebSubnet-AZ1a, WebSubnet-AZ1b, WebSubnet-AZ1c), click on "Actions", and choose "Modify auto-assign IP settings".  
+  - Check "Enable auto-assign public IPv4 address" and click "Save".  
 
-NAT Gateway for Private Subnets  
+4. NAT Gateway for Private Subnets  
 
-Create Elastic IP  
+- Create Elastic IP  
   
-Navigate to "Elastic IPs" in the EC2 Dashboard.  
-Click on "Allocate Elastic IP address".  
-Click "Allocate".  
+  - Navigate to "Elastic IPs" in the EC2 Dashboard.  
+  - Click on "Allocate Elastic IP address".  
+  - Click "Allocate".  
 
-Create NAT Gateway  
+- Create NAT Gateway  
 
-Navigate to "NAT Gateways" in the VPC Dashboard.  
-Click on "Create NAT gateway".  
-Enter the following details:  
-Name: MyNATGateway  
-Subnet: Select one of the web subnets (e.g., WebSubnet-AZ1a)  
-Elastic IP allocation ID: Select the allocated Elastic IP  
-Click "Create NAT gateway".  
+  - Navigate to "NAT Gateways" in the VPC Dashboard.  
+  - Click on "Create NAT gateway".  
+  - Enter the following details:  
+    - Name: MyNATGateway  
+    - Subnet: Select one of the web subnets (e.g., WebSubnet-AZ1a)  
+    - Elastic IP allocation ID: Select the allocated Elastic IP  
+  - Click "Create NAT gateway".  
 
-Create Route Table for Private Subnets  
+- Create Route Table for Private Subnets  
   
-Navigate to "Route Tables" in the VPC Dashboard.  
-Click on "Create route table".  
-Enter a name tag, e.g., PrivateRouteTable.  
-VPC: MyVPC  
-Click "Create route table".  
-Select the created route table, click on "Actions", and choose "Edit routes".  
-Click "Add route" and enter the following details:  
-Destination: 0.0.0.0/0  
-Target: Select the NAT gateway (MyNATGateway)  
-Click "Save routes".  
+- Navigate to "Route Tables" in the VPC Dashboard.  
+- Click on "Create route table".  
+- Enter a name tag, e.g., PrivateRouteTable.  
+- VPC: MyVPC  
+- Click "Create route table".  
+- Select the created route table, click on "Actions", and choose "Edit routes".  
+- Click "Add route" and enter the following details:  
+  - Destination: 0.0.0.0/0  
+  - Target: Select the NAT gateway (MyNATGateway)  
+- Click "Save routes".  
 
-Associate Route Table with Private Subnets  
+- Associate Route Table with Private Subnets  
   
-Select the PrivateRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
-Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
-Click "Save".  
+- Select the PrivateRouteTable, click on the "Subnet associations" tab, and then click "Edit subnet associations".  
+- Select the subnets AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c, DBSubnet-AZ1a, DBSubnet-AZ1b, and DBSubnet-AZ1c.  
+- Click "Save".  
 
-Deploy EC2 Instances for Web and App Tiers  
+5. Deploy EC2 Instances for Web and App Tiers  
   
-Web Tier Instances  
+- Web Tier Instances  
 
-Navigate to "Instances" in the EC2 Dashboard.  
-Click on "Launch instances".  
-Enter the following details for each instance:  
-Name: WebInstance-AZ1a, WebInstance-AZ1b, WebInstance-AZ1c  
-AMI: Select an appropriate AMI (e.g., Amazon Linux 2)  
-Instance type: t2.micro  
-Key pair: Select your key pair  
-Network settings:  
-VPC: MyVPC  
-Subnet: Select the respective web subnet (WebSubnet-AZ1a, WebSubnet-AZ1b, WebSubnet-AZ1c)  
-Auto-assign public IP: Enabled  
-Security group: Create a new security group allowing HTTP (port 80) and SSH (port 22) access  
-Click "Launch instance".
+- Navigate to "Instances" in the EC2 Dashboard.  
+- Click on "Launch instances".  
+- Enter the following details for each instance:  
+  - Name: WebInstance-AZ1a, WebInstance-AZ1b, WebInstance-AZ1c  
+  - AMI: Select an appropriate AMI (e.g., Amazon Linux 2)  
+  - Instance type: t2.micro  
+  - Key pair: Select your key pair  
+  - Network settings:  
+    - VPC: MyVPC  
+    - Subnet: Select the respective web subnet (WebSubnet-AZ1a, WebSubnet-AZ1b, WebSubnet-AZ1c)  
+    - Auto-assign public IP: Enabled  
+  - Security group: Create a new security group allowing HTTP (port 80) and SSH (port 22) access  
+- Click "Launch instance".
 
-App Tier Instances  
+- App Tier Instances  
 ////////////////////////////////////
 Repeat the above steps with:
 Name: AppInstance-AZ1a, AppInstance-AZ1b, AppInstance-AZ1c
