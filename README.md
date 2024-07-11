@@ -48,12 +48,12 @@ The VPC range for this setup is 172.20.0.0/20.
 
 1. VPC Creation
 
-Navigate to the VPC Dashboard in the AWS Management Console.  
-Click on "Create VPC".  
-Enter the following details:  
-Name tag: MyVPC  
-IPv4 CIDR block: 172.20.0.0/20  
-Click "Create VPC".  
+-Navigate to the VPC Dashboard in the AWS Management Console.  
+-Click on "Create VPC".  
+-Enter the following details:  
+-Name tag: MyVPC  
+-IPv4 CIDR block: 172.20.0.0/20  
+-Click "Create VPC".  
 
 2. Subnets Creation  
 
