@@ -46,7 +46,7 @@ The VPC range for this setup is 172.20.0.0/20.
 ```
 ## Step-by-Step Setup Using AWS Management Console  
 
-** 1. VPC Creation ** 
+**1. VPC Creation** 
 
 - Navigate to the VPC Dashboard in the AWS Management Console.  
 - Click on "Create VPC".  
@@ -56,7 +56,7 @@ The VPC range for this setup is 172.20.0.0/20.
 - Click "Create VPC".  
 
 
- ** 2. Subnets Creation ** 
+ **2. Subnets Creation** 
 
 - Web Tier Subnets (Public)
 
