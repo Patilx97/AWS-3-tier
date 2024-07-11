@@ -173,7 +173,7 @@ The VPC range for this setup is 172.20.0.0/20.
 
 - App Tier Instances  
 
- - Repeat the above steps with:
+  - Repeat the above steps with:
     - Name: AppInstance-AZ1a, AppInstance-AZ1b, AppInstance-AZ1c
     - Subnet: Select the respective app subnet (AppSubnet-AZ1a, AppSubnet-AZ1b, AppSubnet-AZ1c)
     - Auto-assign public IP: Disabled
